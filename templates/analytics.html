@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Analytics Report</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f9;
+            margin: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .summary-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Pharmacy Sales Analytics Report</h1>
+
+<div class="summary-box">
+    <div class="card">
+        <h3>Total Sales</h3>
+        <h2>₹ {{ total_sales }}</h2>
+    </div>
+
+    <div class="card">
+        <h3>Total Orders</h3>
+        <h2>{{ total_orders }}</h2>
+    </div>
+</div>
+
+<h2>📅 Monthly Report</h2>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Total Sales (₹)</th>
+        <th>Total Orders</th>
+    </tr>
+    {% for row in monthly_report %}
+    <tr>
+        <td>{{ row.month }}</td>
+        <td>{{ row.total_sales }}</td>
+        <td>{{ row.total_orders }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>📆 Yearly Report</h2>
+<table>
+    <tr>
+        <th>Year</th>
+        <th>Total Sales (₹)</th>
+        <th>Total Orders</th>
+    </tr>
+    {% for row in yearly_report %}
+    <tr>
+        <td>{{ row.year }}</td>
+        <td>{{ row.total_sales }}</td>
+        <td>{{ row.total_orders }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharma Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="topbar">
+    <h2>💊 Pharma Management System</h2>
+    <span>Welcome, {{ session['user'] }}</span>
+</div>
+
+<div class="container">
+
+    <div class="card-grid">
+
+        <a href="/medicines" class="card">
+            <div class="icon">💊</div>
+            <h3>Medicines</h3>
+            <p>Manage stock & inventory</p>
+        </a>
+
+        <a href="/sales" class="card">
+            <div class="icon">🧾</div>
+            <h3>Sales & Billing</h3>
+            <p>Create invoices & track sales</p>
+        </a>
+
+        <a href="/expiry" class="card">
+            <div class="icon">⏰</div>
+            <h3>Expiry Check</h3>
+            <p>Track near-expiry medicines</p>
+        </a>
+
+       
+ <a href="/analytics" class="card">
+            <div class="icon">📈</div>
+            <h3> Analytics</h3>
+            <p>Monthly & yearly growth</p>
+        </a>
+
+        <a href="/logout" class="card logout">
+            <div class="icon">🚪</div>
+            <h3>Logout</h3>
+            <p>Secure sign out</p>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+    <h2 class="page-title">🧾 Sales & Billing</h2>
+
+    <form method="POST" class="form-grid">
+        <select name="medicine_id" required>
+            {% for m in medicines %}
+            <option value="{{ m.id }}">{{ m.name }} (Stock: {{ m.quantity }})</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <button>Generate Bill</button>
+    </form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Medicine</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Bill</th>
+        <th>Action</th>
+    </tr>
+
+    {% for s in sales %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.quantity }}</td>
+        <td>₹{{ s.total_price }}</td>
+        <td>{{ s.sale_date }}</td>
+        <td><a href="/bill/{{ s.id }}">View</a></td>
+
+        <td>
+            <form action="{{ url_for('delete_sale', sale_id=s.id) }}" 
+                  method="POST"
+                  onsubmit="return confirm('Are you sure you want to delete this bill?');">
+                <button type="submit" class="delete-btn">🗑 Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+    <a href="/dashboard" class="back-link">⬅ Dashboard</a>
+</div>
+
+</body>
+</html>

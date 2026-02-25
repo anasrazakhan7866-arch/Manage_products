@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expiry Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+    <h2 class="page-title">⏰ Expiring Medicines</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Quantity</th>
+            <th>Expiry Date</th>
+        </tr>
+
+        {% for m in medicines %}
+        <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.batch_no }}</td>
+            <td>{{ m.quantity }}</td>
+            <td class="expiring">{{ m.expiry_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/dashboard" class="back-link">⬅ Dashboard</a>
+</div>
+
+</body>
+</html>

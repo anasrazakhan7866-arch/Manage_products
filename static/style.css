@@ -1,0 +1,402 @@
+/* ================= GENERAL STYLES ================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Video Background */
+#home video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(12, 0, 0);  
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* ---------------- TOP BAR ---------------- */
+.topbar {
+    background: #1f2937;
+    color: #617508;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h2 {
+    margin: 0;
+}
+
+/* ---------------- CARDS ---------------- */
+.container {
+    padding: 40px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.logout {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.logout:hover {
+    background: #fecaca;
+}
+
+/* ---------------- COMMON LAYOUT ---------------- */
+.page-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgb(232, 188, 188);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.page-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* ---------------- FORMS ---------------- */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-grid button {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-grid button:hover {
+    background: #16a085;
+}
+
+/* ---------------- TABLE ---------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: black;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+tr:hover {
+    background: rgba(0,0,0,0.1);
+    color: black;
+}
+
+/* ---------------- BACK BUTTON ---------------- */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    background: #3498db;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+.back-link:hover {
+    background: #2980b9;
+}
+
+/* ---------------- AUTH PAGES ---------------- */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1abc9c, #3498db);
+}
+
+.auth-box {
+    background: white;
+    padding: 35px;
+    width: 360px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #1abc9c;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #16a085;
+}
+
+.auth-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-box a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.85);
+    color: rgb(116, 226, 193);
+}
+
+/* ================= HOME PAGE IMPROVEMENTS ================= */
+
+/* Navbar */
+.navbar {
+    background: rgba(0,0,0,0.7);
+    padding: 20px 60px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo with emoji */
+.logo {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1dd1a1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    animation: glow 2.5s infinite ease-in-out;
+}
+
+.logo::before {
+    content: "💊"; /* emoji as logo */
+    font-size: 42px;
+}
+
+/* Navbar links */
+.navbar nav a {
+    color: rgb(22, 185, 158);
+    font-weight: 600;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #1dd1a1;
+}
+
+/* Navbar buttons */
+.navbar .btn {
+    background: #1dd1a1;
+    color: black;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin-left: 8px; /* buttons close together */
+    transition: 0.3s;
+}
+
+.navbar .btn:hover {
+    background: white;
+    color: #1dd1a1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+/* Hero Heading */
+.hero h1 {
+    font-size: 60px;
+    font-weight: 900;
+    color: #1dd1a1;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+    margin-bottom: 15px;
+    animation: glow 2.5s infinite ease-in-out;
+}
+
+/* Hero Paragraph */
+.hero p {
+    font-size: 22px;
+    color: #45e8af;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+    margin-bottom: 30px;
+}
+
+/* Hero Button */
+.hero-btn {
+    background: #f3f0d4;
+    color: black;
+    font-weight: bold;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #1dd1a1;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(29, 209, 161, 0.6), 0 0 10px rgba(29, 209, 161, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(29, 209, 161, 0.9), 0 0 35px rgba(29, 209, 161, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(29, 209, 161, 0.6), 0 0 10px rgba(29, 209, 161, 0.4);
+    }
+}
+
+/* About & Products Sections */
+.section {
+    background: rgba(0,0,0,0.8);
+    color: rgb(91, 229, 172);
+    padding: 60px;
+    text-align: center;
+}
+
+.section.light {
+    background: rgba(0, 0, 0, 0.999);
+    color: rgb(12, 227, 163);
+}
+
+.cards .card {
+    background: rgb(212, 245, 234);
+    color: black;
+}
+.delete-btn {
+    background-color: #c0392b;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+}
+.delete-btn {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+}
