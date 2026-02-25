@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import mysql.connector
 from datetime import date
-
+import os
 app = Flask(__name__)
 app.secret_key = "pharma_secret"
 conn = mysql.connector.connect(
@@ -323,3 +323,4 @@ import os
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
