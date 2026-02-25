@@ -4,22 +4,18 @@ from datetime import date
 import os
 app = Flask(__name__)
 app.secret_key = "pharma_secret"
-conn = mysql.connector.connect(
+
+
+
+# ---------- DATABASE CONNECTION ----------
+def get_db():
+   conn = mysql.connector.connect(
     host=os.environ.get("MYSQLHOST"),
     user=os.environ.get("MYSQLUSER"),
     password=os.environ.get("MYSQLPASSWORD"),
     database=os.environ.get("MYSQLDATABASE"),
     port=os.environ.get("MYSQLPORT")
-)
-
-# ---------- DATABASE CONNECTION ----------
-def get_db():
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root123",   # 🔴 CHANGE THIS
-        database="ppharma_db"
-    )
+   )
 
 
 # ---------- HOME ----------
@@ -323,4 +319,5 @@ import os
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 
